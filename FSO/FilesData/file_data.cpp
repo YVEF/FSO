@@ -1,12 +1,13 @@
-#include "FileData.h"
+#include "file_data.h"
 
 
 
-FileData::FileData()
+file_data::file_data()
 {
+    ParentFileData = nullptr;
 }
 
-FileData::FileData(WIN32_FIND_DATA* fileFindData, FileData* parentFileData)
+file_data::file_data(WIN32_FIND_DATA* fileFindData, file_data* parentFileData)
 {
     LARGE_INTEGER fileSize;
 
@@ -16,12 +17,7 @@ FileData::FileData(WIN32_FIND_DATA* fileFindData, FileData* parentFileData)
     CreatedDateTime = fileFindData->ftCreationTime.dwLowDateTime;
     LastModifiedDateTime = fileFindData->ftLastWriteTime.dwLowDateTime;
     Size = fileSize.QuadPart;
-    Name = FormattingHelper::ToString(fileFindData->cFileName);
+    Name = formatting_helper::ToString(fileFindData->cFileName);
     ParentFileData = parentFileData;
 }
 
-//template<typename FD>
-//inline void FileData::serialize(FD& fd)
-//{
-//    fd(Name, Size, CreatedDateTime, LastModifiedDateTime, IsDirectory, ParentFileData);
-//}

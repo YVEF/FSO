@@ -33,12 +33,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TextGenerator.cpp">
-      <Filter>Source Files\InternalServices</Filter>
-    </ClCompile>
-    <ClCompile Include="ArgumentParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FSO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -47,12 +41,6 @@
     </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FilesData\FileData.cpp">
-      <Filter>Source Files\FileData</Filter>
-    </ClCompile>
-    <ClCompile Include="Helpers\FormattingHelper.cpp">
-      <Filter>Source Files\Helpers</Filter>
     </ClCompile>
     <ClCompile Include="RequestData.cpp">
       <Filter>Source Files</Filter>
@@ -69,22 +57,28 @@
     <ClCompile Include="configuration_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FilesData\file_data.cpp">
+      <Filter>Source Files\FileData</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalServices\TextGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="argument_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\formatting_helper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\file_data_helper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArgumentParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SharedFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Logger.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FilesData\FileData.h">
-      <Filter>Header Files\FileData</Filter>
-    </ClInclude>
-    <ClInclude Include="Helpers\FormattingHelper.h">
-      <Filter>Header Files\Helpers</Filter>
     </ClInclude>
     <ClInclude Include="RequestData.h">
       <Filter>Header Files</Filter>
@@ -98,11 +92,23 @@
     <ClInclude Include="FilesData\file_data_storage.h">
       <Filter>Header Files\FileData</Filter>
     </ClInclude>
+    <ClInclude Include="configuration_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FilesData\file_data.h">
+      <Filter>Header Files\FileData</Filter>
+    </ClInclude>
+    <ClInclude Include="argument_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\formatting_helper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
     <ClInclude Include="file_system_observer_engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="configuration_manager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Helpers\file_data_helper.h">
+      <Filter>Header Files\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

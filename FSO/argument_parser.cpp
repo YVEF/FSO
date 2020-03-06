@@ -1,7 +1,7 @@
-#include "ArgumentParser.h"
+#include "argument_parser.h"
 
 
-WorksType ArgumentParser::GetWorksType(char arg)
+WorksType argument_parser::GetWorksType(char arg)
 {
 	switch (arg)
 	{
@@ -20,7 +20,7 @@ WorksType ArgumentParser::GetWorksType(char arg)
 //
 //}
 
-RequestData* ArgumentParser::GetRequestData(int argsNumber, char** args)
+RequestData* argument_parser::GetRequestData(int argsNumber, char** args)
 {
 	if (argsNumber <= 1)
 		throw std::invalid_argument("Not enough arguments");

@@ -7,7 +7,7 @@
 
 
 
-class ArgumentParser
+class argument_parser
 {
 private:
 	WorksType GetWorksType(char arg);

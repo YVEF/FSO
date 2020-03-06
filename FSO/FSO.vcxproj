@@ -148,26 +148,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArgumentParser.cpp" />
+    <ClCompile Include="argument_parser.cpp" />
     <ClCompile Include="configuration_manager.cpp" />
     <ClCompile Include="FilesData\file_data_storage.cpp" />
-    <ClCompile Include="FilesData\FileData.cpp" />
+    <ClCompile Include="FilesData\file_data.cpp" />
+    <ClCompile Include="Helpers\file_data_helper.cpp" />
     <ClCompile Include="file_system_observer_engine.cpp" />
-    <ClCompile Include="Helpers\FormattingHelper.cpp" />
+    <ClCompile Include="Helpers\formatting_helper.cpp" />
     <ClCompile Include="FSO.cpp" />
+    <ClCompile Include="InternalServices\TextGenerator.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="scaning_scheduler.cpp" />
     <ClCompile Include="SharedFunctions.cpp" />
     <ClCompile Include="RequestData.cpp" />
-    <ClCompile Include="TextGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArgumentParser.h" />
+    <ClInclude Include="argument_parser.h" />
     <ClInclude Include="configuration_manager.h" />
     <ClInclude Include="FilesData\file_data_storage.h" />
-    <ClInclude Include="FilesData\FileData.h" />
+    <ClInclude Include="FilesData\file_data.h" />
+    <ClInclude Include="Helpers\file_data_helper.h" />
     <ClInclude Include="file_system_observer_engine.h" />
-    <ClInclude Include="Helpers\FormattingHelper.h" />
+    <ClInclude Include="Helpers\formatting_helper.h" />
     <ClInclude Include="InternalServices\TextGenerator.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="scaning_scheduler.h" />
