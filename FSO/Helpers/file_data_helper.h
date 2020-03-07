@@ -12,7 +12,8 @@ private:
 	class tokens
 	{
 	public:
-		static const std::string Name;
+		static const std::string Id;
+		static const std::string Type;
 		static const std::string CreateDateTime;
 		static const std::string LastModifiedDateTime;
 		static const std::string Size;

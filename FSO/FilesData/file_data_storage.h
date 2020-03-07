@@ -8,19 +8,22 @@
 #include "../Helpers/formatting_helper.h"
 #include "../Helpers/file_data_helper.h"
 
-//class formatting_helper;
-
 class file_data_storage
 {
 private:
-	std::string mappedFilePath;
-	std::vector<file_data*>* _fileContainer;
+	std::string _mappedFilePath;
+	int _containerIndex;
+	std::vector<file_data*>* _fileContainers[2];
 
+	
 public:
 	file_data_storage();
 	void add_file(file_data* fileData);
 	void flush();
-	void load();
+	bool load();
+	std::vector<file_data*>* getMainFileContainer();
+	std::vector<file_data*>* getNewFileContainer();
+	void applyNewContainer(std::vector<file_data*>* newContainer);
 };
 
 

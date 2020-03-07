@@ -7,16 +7,31 @@
 struct file_data
 {
 public:
+	enum EntryType
+	{
+		M,
+		A,
+		R
+	};
+
+
 	file_data();
 	file_data(WIN32_FIND_DATA* fileFindData, file_data* parentFileData);
 
-	std::string Name;
+	std::string Id;
 	LONGLONG Size;
 	DWORD CreatedDateTime;
 	DWORD LastModifiedDateTime;
-	bool IsDirectory;
 	file_data* ParentFileData;
-	
+	EntryType Type;
+};
+
+struct file_data_difference
+{
+public:
+	std::string Id;
+	std::string Size;
+	std::string LastModifiedDateTime;
 };
 
 

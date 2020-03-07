@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "RequestData.h"
+#include "request_data.h"
 #include <limits>
 #include <stdexcept>
 #include "SharedFunctions.h"
@@ -13,6 +13,6 @@ private:
 	WorksType GetWorksType(char arg);
 public:
 	
-	RequestData* GetRequestData(int argsNumber, char** args);
+	request_data* GetRequestData(int argsNumber, char** args);
 };
 

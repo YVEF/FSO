@@ -1,8 +1,9 @@
 #include "file_data_helper.h"
 
-const std::string file_data_helper::tokens::CreateDateTime = "&cdt&";
-const std::string file_data_helper::tokens::Name = "&n&";
-const std::string file_data_helper::tokens::LastModifiedDateTime = "&lmdt&";
+const std::string file_data_helper::tokens::CreateDateTime = "&c&";
+const std::string file_data_helper::tokens::Id = "&n&";
+const std::string file_data_helper::tokens::Type = "&t&";
+const std::string file_data_helper::tokens::LastModifiedDateTime = "&l&";
 const std::string file_data_helper::tokens::Size = "&s&";
 const std::string file_data_helper::tokens::Delimiter = "&>&";
 
@@ -15,7 +16,8 @@ std::string file_data_helper::toLinearizedString(const file_data* fileData)
 	{
 		result += tokens::CreateDateTime + std::to_string(fileData->CreatedDateTime);
 		result += tokens::LastModifiedDateTime + std::to_string(fileData->LastModifiedDateTime);
-		result += tokens::Name + fileData->Name;
+		result += tokens::Id + fileData->Id;
+		result += tokens::Type + std::to_string(fileData->Type);		
 		result += tokens::Size + std::to_string(fileData->Size);
 		result += tokens::Delimiter;
 	}
@@ -62,9 +64,13 @@ file_data* file_data_helper::toFileData(const std::string lineData)
 			{
 				to(&i, &lineData, tokens::LastModifiedDateTime, [currentFData](const std::string& ld) {currentFData->LastModifiedDateTime = formatting_helper::ToDWORD(ld); });
 			}
-			else if (lineData.rfind(tokens::Name, i) == i)
+			else if (lineData.rfind(tokens::Id, i) == i)
 			{
-				to(&i, &lineData, tokens::Name, [currentFData](const std::string& ld) {currentFData->Name = ld; });
+				to(&i, &lineData, tokens::Id, [currentFData](const std::string& ld) {currentFData->Id = ld; });
+			}
+			else if (lineData.rfind(tokens::Type, i) == i)
+			{
+				to(&i, &lineData, tokens::Type, [currentFData](const std::string& ld) {currentFData->Type = static_cast<file_data::EntryType>(std::stoi(ld)); });
 			}
 			else if (lineData.rfind(tokens::Size, i) == i)
 			{

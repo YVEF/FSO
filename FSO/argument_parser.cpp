@@ -15,18 +15,13 @@ WorksType argument_parser::GetWorksType(char arg)
 	}
 }
 
-//void AnalyzeCommand(RequestData* data, argument start char** args)
-//{
-//
-//}
-
-RequestData* argument_parser::GetRequestData(int argsNumber, char** args)
+request_data* argument_parser::GetRequestData(int argsNumber, char** args)
 {
 	if (argsNumber <= 1)
 		throw std::invalid_argument("Not enough arguments");
 
-	RequestData* rdata = new RequestData();
-	rdata->ScaningFrequency = INFINITY;
+	request_data* rdata = new request_data();
+	//rdata->ScaningFrequency = 5000;
 	rdata->EnableNotification = false;
 	for (int i = 1; i < argsNumber; i++)
 	{

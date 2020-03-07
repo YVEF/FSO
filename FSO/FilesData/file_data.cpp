@@ -17,7 +17,7 @@ file_data::file_data(WIN32_FIND_DATA* fileFindData, file_data* parentFileData)
     CreatedDateTime = fileFindData->ftCreationTime.dwLowDateTime;
     LastModifiedDateTime = fileFindData->ftLastWriteTime.dwLowDateTime;
     Size = fileSize.QuadPart;
-    Name = formatting_helper::ToString(fileFindData->cFileName);
+    Id = formatting_helper::ToString(fileFindData->cFileName);
     ParentFileData = parentFileData;
 }
 

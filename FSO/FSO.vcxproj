@@ -160,7 +160,7 @@
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="scaning_scheduler.cpp" />
     <ClCompile Include="SharedFunctions.cpp" />
-    <ClCompile Include="RequestData.cpp" />
+    <ClCompile Include="request_data.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="argument_parser.h" />
@@ -174,7 +174,7 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="scaning_scheduler.h" />
     <ClInclude Include="SharedFunctions.h" />
-    <ClInclude Include="RequestData.h" />
+    <ClInclude Include="request_data.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

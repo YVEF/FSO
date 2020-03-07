@@ -25,6 +25,5 @@ void TextGenerator::Generate(std::string fileName, size_t lineSize, size_t rowNu
 
 	file.flush();
 	file.close();
-		
-	//int s = generator(dev);
+
 }

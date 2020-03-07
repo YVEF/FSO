@@ -7,13 +7,11 @@ typedef enum WorksType
 	REPORTING
 } WORKTYPES;
 
-struct RequestData
+struct request_data
 {
-
-
 	std::string RootDirectory;
 	bool EnableNotification;
-	int ScaningFrequency;
+	int ScaningFrequency = -1;
 	WORKTYPES WorkType;
 	bool ToStart;
 	bool ToStop;
