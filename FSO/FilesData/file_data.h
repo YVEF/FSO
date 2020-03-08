@@ -16,7 +16,9 @@ public:
 
 
 	file_data();
+	file_data(const file_data* fdata);
 	file_data(WIN32_FIND_DATA* fileFindData, file_data* parentFileData);
+	~file_data();
 
 	std::string Id;
 	LONGLONG Size;

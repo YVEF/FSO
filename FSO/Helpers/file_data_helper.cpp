@@ -90,10 +90,6 @@ file_data* file_data_helper::toFileData(const std::string lineData)
 		}
 	}
 
-	
-
-
-
 	return result;
 
 }
