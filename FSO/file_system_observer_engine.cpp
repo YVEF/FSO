@@ -106,6 +106,7 @@ void file_system_observer_engine::directory_processing(std::string rootPath, fil
             if (fileFindData.cFileName[0] == '.')
                 continue;
             auto newParentFileData = new file_data(&fileFindData, parentFileData);
+            newParentFileData->Type = file_data::EntryType::A;
             directory_processing(rootPath + "\\" + formatting_helper::ToString(fileFindData.cFileName), newParentFileData);
         }
         else
@@ -119,5 +120,6 @@ void file_system_observer_engine::directory_processing(std::string rootPath, fil
 void file_system_observer_engine::file_processing(WIN32_FIND_DATA* fileFindData, file_data* parentFileData)
 {
     auto fileData = new file_data(fileFindData, parentFileData);
+    fileData->Type = file_data::EntryType::A;
     _fileDataStorage.add_file(fileData);
 }

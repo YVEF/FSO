@@ -1,7 +1,7 @@
 #include "file_data_helper.h"
 
 const std::string file_data_helper::tokens::CreateDateTime = "&c&";
-const std::string file_data_helper::tokens::Id = "&n&";
+const std::string file_data_helper::tokens::Id = "&i&";
 const std::string file_data_helper::tokens::Type = "&t&";
 const std::string file_data_helper::tokens::LastModifiedDateTime = "&l&";
 const std::string file_data_helper::tokens::Size = "&s&";
@@ -33,7 +33,7 @@ void file_data_helper::to(size_t* index, const std::string* lineData, std::strin
 	int startIndex = *index + key.size();
 	int nextAmp = lineData->find("&", startIndex);
 	if (nextAmp == -1)
-		nextAmp = lineData->size() - 1;
+		nextAmp = lineData->size();
 	int length = nextAmp - startIndex;
 	func(lineData->substr(startIndex, length));
 	*index = length + startIndex;
@@ -48,11 +48,11 @@ file_data* file_data_helper::toFileData(const std::string lineData)
 	int parentDataStartIndex = 0;
 	
 
-	while (i < lineData.size() - 1)
+	while (i < lineData.size())
 	{
 		parentDataStartIndex = lineData.find(tokens::Delimiter, parentDataStartIndex + 1);
 		if (parentDataStartIndex == -1)
-			parentDataStartIndex = lineData.size() - 1;
+			parentDataStartIndex = lineData.size();
 
 		for (; i < parentDataStartIndex;)
 		{
@@ -82,7 +82,7 @@ file_data* file_data_helper::toFileData(const std::string lineData)
 			}
 		}
 
-		if (parentDataStartIndex != lineData.size()-1)
+		if (parentDataStartIndex != lineData.size())
 		{
 			currentFData->ParentFileData = new file_data();
 			currentFData = currentFData->ParentFileData;

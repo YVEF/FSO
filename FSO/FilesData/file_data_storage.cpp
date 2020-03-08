@@ -13,10 +13,6 @@ void file_data_storage::add_file(file_data* fileData)
 
 
 
-
-
-
-
 void file_data_storage::flush()
 {
 	std::ofstream file;
@@ -34,7 +30,8 @@ void file_data_storage::flush()
 	file.close();
 	_fileContainers[0]->clear();
 	_fileContainers[1]->clear();
-	delete[] _fileContainers;
+	delete _fileContainers[0];
+	delete _fileContainers[1];
 }
 
 bool file_data_storage::load()
